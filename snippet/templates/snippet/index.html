@@ -1,0 +1,19 @@
+<form action="/" method="post">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit" />
+</form>
+
+{% for item in data %}
+<h2>
+  {{ forloop.counter }}. {{ item.1 }} - {{ item.0 }}
+</h2>
+<h3>
+  {{ item.3 }}
+</h3>
+<pre>
+  {{ item.2 }}
+</pre>
+{% endfor %}
